@@ -1,0 +1,699 @@
+{
+  "input_namespaces": [
+    {
+      "name": "advanced_content_runtime_chef",
+      "label": "Advanced Content Runtime"
+    }
+  ],
+  "output_namespace": "content_template_output",
+  "input_groups": [
+    {
+      "name": "cloud",
+      "label": "Cloud input variables"
+    },
+    {
+      "name": "global",
+      "label": "Global input variables"
+    },
+    {
+      "name": "ssh_keys",
+      "label": "SSH Keys"
+    },
+    {
+      "name": "environment",
+      "label": "Environment"
+    },
+    {
+      "name": "was855node01",
+      "label": "WAS855Node01"
+    }
+  ],
+  "output_groups": [
+    {
+      "name": "content_template_output",
+      "label": "Outputs"
+    }
+  ],
+  "template_input_params": [
+    {
+      "name": "ibm_stack_name",
+      "type": "string",
+      "description": "A unique stack name.",
+      "hidden": true,
+      "label": "A unique stack name.",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "global"
+    },
+    {
+      "name": "WAS855Node01_was_os_users_was_comment",
+      "type": "string",
+      "description": "Comment that will be added when creating the userid",
+      "default": "WAS administrative user",
+      "hidden": false,
+      "label": "Add comment for the user - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_profiles_standalone_profiles_standalone1_cell",
+      "type": "string",
+      "description": "Cell name for the application server",
+      "default": "cell01",
+      "hidden": false,
+      "label": "Application server cell name - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_wsadmin_standalone_jvmproperty_property_value_maximum",
+      "type": "string",
+      "description": "Maximum JVM heap size",
+      "default": "512",
+      "hidden": false,
+      "label": "Application server maximum JVM Heap Size - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_wsadmin_standalone_jvmproperty_property_value_initial",
+      "type": "string",
+      "description": "Minimum JVM heap size",
+      "default": "256",
+      "hidden": false,
+      "label": "Application server minimum JVM Heap Size - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_profiles_standalone_profiles_standalone1_server",
+      "type": "string",
+      "description": "Name of the application server",
+      "default": "standalone01",
+      "hidden": false,
+      "label": "Application server name - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_profiles_standalone_profiles_standalone1_profile",
+      "type": "string",
+      "description": "Application server profile name",
+      "default": "AppSrv01",
+      "hidden": false,
+      "label": "Application server profile name - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "allow_unverified_ssl",
+      "type": "string",
+      "description": "Communication with vsphere server with self signed certificate",
+      "default": true,
+      "hidden": true,
+      "label": "Communication with vsphere server with self signed certificate",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "cloud"
+    },
+    {
+      "name": "WAS855Node01_dns_servers",
+      "type": "list",
+      "description": "DNS servers for the virtual network adapter",
+      "hidden": false,
+      "label": "DNS Servers - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "cloud"
+    },
+    {
+      "name": "WAS855Node01_dns_suffixes",
+      "type": "list",
+      "description": "Name resolution suffixes for the virtual network adapter",
+      "hidden": false,
+      "label": "DNS Suffixes - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "cloud"
+    },
+    {
+      "name": "was_profiles_standalone_profiles_standalone1_keystorepassword",
+      "type": "string",
+      "description": "Specifies the password to use on all keystore files created during profile creation",
+      "hidden": false,
+      "label": "Default keystore password",
+      "secured": true,
+      "required": true,
+      "immutable": false,
+      "group_name": "environment"
+    },
+    {
+      "name": "WAS855Node01_root_disk_keep_on_remove",
+      "type": "string",
+      "description": "Delete template disk volume when the virtual machine is deleted",
+      "hidden": true,
+      "label": "Delete template disk volume when the virtual machine is deleted - was855node01",
+      "secured": false,
+      "options": [
+        {
+          "value": "false",
+          "label": "False",
+          "default": "false"
+        },
+        {
+          "value": "true",
+          "label": "True"
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "ibm_pm_access_token",
+      "type": "string",
+      "description": "IBM Pattern Manager Access Token",
+      "hidden": true,
+      "label": "IBM Pattern Manager Access Token",
+      "secured": true,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_pm_access_token}"
+    },
+    {
+      "name": "ibm_pm_service",
+      "type": "string",
+      "description": "IBM Pattern Manager Service",
+      "hidden": true,
+      "label": "IBM Pattern Manager Service",
+      "secured": false,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_pm_service}"
+    },
+    {
+      "name": "ibm_im_repo",
+      "type": "string",
+      "description": "IBM Software  Installation Manager Repository URL (https://<hostname/IP>:<port>/IMRepo) ",
+      "hidden": true,
+      "label": "IBM Software Installation Manager Repository",
+      "secured": false,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_im_repo}"
+    },
+    {
+      "name": "ibm_im_repo_password",
+      "type": "string",
+      "description": "IBM Software  Installation Manager Repository Password",
+      "hidden": true,
+      "label": "IBM Software Installation Manager Repository Password",
+      "secured": true,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_im_repo_password}"
+    },
+    {
+      "name": "ibm_im_repo_user",
+      "type": "string",
+      "description": "IBM Software  Installation Manager Repository username",
+      "default": "${advanced_content_runtime_chef.ibm_im_repo_user}",
+      "hidden": true,
+      "label": "IBM Software Installation Manager Repository Username",
+      "secured": false,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment"
+    },
+    {
+      "name": "ibm_sw_repo_password",
+      "type": "string",
+      "description": "IBM Software Repo Password",
+      "hidden": true,
+      "label": "IBM Software Repo Password",
+      "secured": true,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_sw_repo_password}"
+    },
+    {
+      "name": "ibm_sw_repo",
+      "type": "string",
+      "description": "IBM Software Repo Root (https://<hostname>:<port>)",
+      "hidden": true,
+      "label": "IBM Software Repo Root",
+      "secured": false,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment",
+      "default": "${advanced_content_runtime_chef.ibm_sw_repo}"
+    },
+    {
+      "name": "ibm_sw_repo_user",
+      "type": "string",
+      "description": "IBM Software Repo Username",
+      "default": "${advanced_content_runtime_chef.ibm_sw_repo_user}",
+      "hidden": true,
+      "label": "IBM Software Repo Username",
+      "secured": false,
+      "required": true,
+      "immutable": true,
+      "group_name": "environment"
+    },
+    {
+      "name": "WAS855Node01_was_java_version",
+      "type": "string",
+      "description": "The Java SDK version that should be installed with the WebSphere Application Server. Example format is 8.0.4.70",
+      "default": "7.1.3.30",
+      "hidden": false,
+      "label": "Java SDK version - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01-image",
+      "type": "string",
+      "description": "Operating system image id / template that should be used when creating the virtual image",
+      "hidden": false,
+      "label": "Operating System ID / Template - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01-os_password",
+      "type": "string",
+      "description": "Operating System Password for the Operating System User to access virtual machine",
+      "hidden": false,
+      "label": "Operating System Password - WAS855Node01",
+      "secured": true,
+      "required": true,
+      "immutable": false,
+      "group_name": "global"
+    },
+    {
+      "name": "WAS855Node01-os_admin_user",
+      "type": "string",
+      "description": "Name of admin user account in virtual machine to be SSHed into; Please refer to the documents from OS image vendors to obtain the default admin users",
+      "hidden": false,
+      "label": "Operating System Username - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "ibm_pm_private_ssh_key",
+      "type": "string",
+      "description": "Private CAMC SSH key (base64 encoded) used to connect to the virtual guest.",
+      "hidden": true,
+      "label": "Private CAMC SSH key (base64 encoded) used to connect to the virtual guest.",
+      "secured": true,
+      "required": true,
+      "immutable": true,
+      "group_name": "global",
+      "default": "${advanced_content_runtime_chef.ibm_pm_private_ssh_key}"
+    },
+    {
+      "name": "ibm_pm_public_ssh_key",
+      "type": "string",
+      "description": "Public CAMC SSH key value which is used to connect to a guest, used on VMWare only.",
+      "hidden": true,
+      "label": "Public CAMC SSH key value which is used to connect to a guest, used on VMWare only.",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "global",
+      "default": "${advanced_content_runtime_chef.ibm_pm_public_ssh_key}"
+    },
+    {
+      "name": "WAS855Node01-name",
+      "type": "string",
+      "description": "Short Hostname of virtual machine",
+      "hidden": false,
+      "label": "Short Hostname - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_root_disk_controller_type",
+      "type": "string",
+      "description": "Type of template disk controller",
+      "hidden": false,
+      "label": "Template Disk Controller - WAS855Node01",
+      "secured": false,
+      "options": [
+        {
+          "value": "scsi",
+          "label": "scsi",
+          "default": "true"
+        },
+        {
+          "value": "scsi-lsi-parallel",
+          "label": "scsi-lsi-parallel"
+        },
+        {
+          "value": "scsi-buslogic",
+          "label": "scsi-buslogic"
+        },
+        {
+          "value": "scsi-paravirtual",
+          "label": "scsi-paravirtual"
+        },
+        {
+          "value": "scsi-isi-sas",
+          "label": "scsi-isi-sas"
+        },
+        {
+          "value": "ide",
+          "label": "ide"
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_root_disk_datastore",
+      "type": "string",
+      "description": "Data store or storage cluster name for target virtual machine's disks",
+      "hidden": false,
+      "label": "Template Disk Datastore - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_root_disk_type",
+      "type": "string",
+      "description": "Type of template disk volume",
+      "hidden": false,
+      "label": "Template Disk Type - WAS855Node01",
+      "secured": false,
+      "options": [
+        {
+          "value": "eager_zeroed",
+          "label": "Thick Provision Eager Zeroed",
+          "default": "true"
+        },
+        {
+          "value": "lazy",
+          "label": "Thick Provision Lazy Zeroed"
+        },
+        {
+          "value": "thin",
+          "label": "Thin Provision",
+          "group_name": "was855node01"
+        }
+      ],
+      "required": true,
+      "immutable": false,
+      "group_name": "global"
+    },
+    {
+      "name": "WAS855Node01_was_os_users_was_ldap_user",
+      "type": "string",
+      "description": "Use LDAP to authenticate operating system account on Linux logins",
+      "default": "false",
+      "hidden": false,
+      "label": "Use LDAP for Authentication - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "user_public_ssh_key",
+      "type": "string",
+      "description": "User defined public SSH key used to connect to the virtual machine, whose format is required to be the openSSH key format with optional comment",
+      "default": "None",
+      "hidden": false,
+      "label": "User Public SSH Key - ssh_keys",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "ssh_keys"
+    },
+    {
+      "name": "WAS855Node01_ipv4_gateway",
+      "type": "string",
+      "description": "IPv4 gateway for vNIC configuration",
+      "hidden": false,
+      "label": "Virtual Machine Gateway Address - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_ipv4_address",
+      "type": "string",
+      "description": "IPv4 address for vNIC configuration",
+      "hidden": false,
+      "label": "Virtual Machine IP Address - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_memory",
+      "type": "string",
+      "description": "Memory for virtual machine in MBs, which is required to be one or more times of 1024",
+      "default": 2048,
+      "hidden": false,
+      "label": "Virtual Machine Memory - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_ipv4_prefix_length",
+      "type": "string",
+      "description": "IPv4 Prefix length for vNIC configuration, which is required to be numbers between 8 and 32",
+      "hidden": false,
+      "label": "Virtual Machine Netmask Prefix - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_number_of_vcpu",
+      "type": "string",
+      "description": "Number of virtual CPU for the virtual machine, which is required to be a positive Integer",
+      "default": 2,
+      "hidden": false,
+      "label": "Virtual Machine vCPUs - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_network_interface_label",
+      "type": "string",
+      "description": "vSphere port group or network label for virtual machine's vNIC",
+      "hidden": false,
+      "label": "Virtual Machine vSphere Port Group - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_version",
+      "type": "string",
+      "description": "The release and fixpack level of WebSphere Application Server to be installed. Example formats are 8.5.5.11 or 9.0.0.4",
+      "default": "8.5.5.9",
+      "hidden": false,
+      "label": "WebSphere Application Server version - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_os_users_was_name",
+      "type": "string",
+      "description": "Operating system userid that will be used to install the product. Userid will be created if it does not exist",
+      "default": "wasadmin",
+      "hidden": false,
+      "label": "WebSphere Installation Userid - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_os_users_was_home",
+      "type": "string",
+      "description": "Home directory location for operating system user that is used for product installation",
+      "default": "/home/wasadmin",
+      "hidden": false,
+      "label": "WebSphere System Installation Userid Home Directory - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_os_users_was_gid",
+      "type": "string",
+      "description": "Operating System group name that will be assigned to the product installation",
+      "default": "wasgrp",
+      "hidden": false,
+      "label": "WebSphere User Group Name - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_security_admin_user",
+      "type": "string",
+      "description": "The username for securing the WebSphere adminstrative console",
+      "default": "wasadmin",
+      "hidden": false,
+      "label": "WebSphere administrative user name - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "was_security_admin_user_pwd",
+      "type": "string",
+      "description": "The password for the WebSphere administrative account",
+      "hidden": false,
+      "label": "WebSphere administrative user password",
+      "secured": true,
+      "required": true,
+      "immutable": false,
+      "group_name": "environment"
+    },
+    {
+      "name": "WAS855Node01_was_profile_dir",
+      "type": "string",
+      "description": "The directory path that contains WebSphere Application Server profiles",
+      "default": "/opt/IBM/WebSphere/AppServer/profiles",
+      "hidden": false,
+      "label": "WebSphere configuration data location - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_was_install_dir",
+      "type": "string",
+      "description": "The installation root directory for the WebSphere Application Server roduct binaries",
+      "default": "/opt/IBM/WebSphere/AppServer",
+      "hidden": false,
+      "label": "WebSphere product installation directory - was855node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_cluster",
+      "type": "string",
+      "description": "Target vSphere cluster to host the virtual machine",
+      "hidden": false,
+      "label": "vSphere Cluster - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_datacenter",
+      "type": "string",
+      "description": "Target vSphere Datacenter for virtual machine creation",
+      "hidden": false,
+      "label": "vSphere Datacenter - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    },
+    {
+      "name": "WAS855Node01_folder",
+      "type": "string",
+      "description": "Target vSphere folder for virtual machine",
+      "hidden": false,
+      "label": "vSphere Folder Name - WAS855Node01",
+      "secured": false,
+      "required": true,
+      "immutable": false,
+      "group_name": "was855node01"
+    }
+  ],
+  "template_output_params": [
+    {
+      "name": "WAS855Node01_ip",
+      "label": "IP Addresss",
+      "description": "The Public and Public IP address",
+      "type": "string",
+      "hidden": false,
+      "secured": false,
+      "group_name": "content_template_output"
+    },
+    {
+      "name": "WAS855Node01_name",
+      "label": "Node Name",
+      "description": "The chef node name",
+      "type": "string",
+      "hidden": false,
+      "secured": false,
+      "group_name": "content_template_output"
+    },
+    {
+      "name": "WAS855Node01_roles",
+      "label": "Chef Roles",
+      "description": "The chef roles deployed",
+      "type": "string",
+      "hidden": false,
+      "secured": false,
+      "group_name": "content_template_output"
+    },
+    {
+      "name": "stack_id",
+      "label": "Generated Stack ID",
+      "description": "The generated stack id",
+      "type": "string",
+      "hidden": false,
+      "secured": false,
+      "group_name": "content_template_output"
+    }
+  ]
+}

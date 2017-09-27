@@ -1,0 +1,63 @@
+{
+    "name": "Oracle Enterprise Database Deployment on a Single VM - VMware vSphere",
+    "description": "This template deploys Oracle Enterprise Database V12c on a Linux virtual machine.",
+    "version": "1.0",
+    "imageUrl": "",
+    "image": "",
+    "type": "chefcontent",
+    "status": "active",
+    "manifest": {
+      "template_type": "Terraform",
+      "template_format": "HCL",
+      "template_provider": "VMware vSphere",
+      "template": {
+        "templateData": "",
+        "templateVariables": "",
+        "templateOutput": ""
+      },
+      "template_source": {
+        "githubRepoUrl": "",
+        "githubAccessToken": "",
+        "relativePathToTemplateFolder": "oracle_database_v12c_standalone_template/vmware/terraform",
+        "templateFileName": "oracle_database_v12c_standalone.tf"
+      }
+    },
+    "metadata": {
+      "displayName": "Oracle Enterprise Database Deployment on a Single VM",
+      "providerDisplayName": "VMware vSphere",
+      "longDescription": "This template deploys Oracle Enterprise Database V12c on a Linux virtual machine.Oracle DB is installed and configured with a single raw database created.",
+      "bullets": [{
+    "title": "Clouds",
+    "description": " VMWare<br>"},
+{
+    "title": "Template Version",
+    "description": "1.0<br>"},
+{
+    "title": "Operating Systems Supported",
+    "description": "Red Hat Enterprise Linux 7<br>Red Hat Enterprise Linux 6<br>"},
+{
+    "title": "Topology",
+    "description": "1 virtual machine:<br>  Oracle DB<br>    odb instance 1, 1 database<br>"},
+{
+    "title": "Software Deployed",
+    "description": "Oracle Enterprise Database V12c<br>"},
+{
+    "title": "Default Virtual Machine Settings",
+    "description": " vCPU = 4, Memory = 8GB, Storage = 25GB<br>"},
+{
+    "title": "Usage and Special Notes",
+    "description": "1. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>2. Detailed system requirements for Oracle Database V12c - https://docs.oracle.com/en/database<br>"}
+],
+      "featuredImageUrl": "",
+      "imageUrl": "",
+      "mediumImageUrl": "",
+      "smallImageUrl": "",
+      "documentationUrl": "",
+      "termsUrl": "",
+      "media": [
+      ]
+    },
+    "toolchain": {
+      "git": "https://github.com/ibmcam/cam-toolchain"
+    }
+}

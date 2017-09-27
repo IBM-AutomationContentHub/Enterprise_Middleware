@@ -1,0 +1,63 @@
+{
+    "name": "IBM DB2 Template - multiple disks",
+    "description": "This template deploys IBM DB2 Enterprise Server Edition 10.5 on a Linux virtual machine.",
+    "version": "1.0",
+    "imageUrl": "",
+    "image": "",
+    "type": "chefcontent",
+    "status": "active",
+    "manifest": {
+      "template_type": "Terraform",
+      "template_format": "HCL",
+      "template_provider": "VMware vSphere",
+      "template": {
+        "templateData": "",
+        "templateVariables": "",
+        "templateOutput": ""
+      },
+      "template_source": {
+        "githubRepoUrl": "",
+        "githubAccessToken": "",
+        "relativePathToTemplateFolder": "ibm_db2_v10_multidisk_template/vmware/terraform",
+        "templateFileName": "ibm_db2_v10_multidisk.tf"
+      }
+    },
+    "metadata": {
+      "displayName": "IBM DB2 Template - multiple disks",
+      "providerDisplayName": "VMware vSphere",
+      "longDescription": "This template deploys IBM DB2 Enterprise Server Edition 10.5 on a Linux virtual machine.IBM DB2 is installed and configured with a single instance and database created.The DB2 instance, database data, logs and archive stored in separate partitions.",
+      "bullets": [{
+    "title": "Default Virtual Machine Settings",
+    "description": "Flavor: VCPU = 2, Memory = 2GB<br>Attached Storage: Linux files systems = 10GB, 40GB, 10GB, 20GB)<br>"},
+{
+    "title": "Clouds",
+    "description": "VMware<br>"},
+{
+    "title": "Software Deployed",
+    "description": "IBM DB2 Enterprise Server Edition 10.5<br>"},
+{
+    "title": "Template Version",
+    "description": "V1.0<br>"},
+{
+    "title": "Operating Systems Supported",
+    "description": "Red Hat Enterprise Linux 7<br>Red Hat Enterprise Linux 6<br>Ubuntu 14.04 LTS<br>"},
+{
+    "title": "Topology",
+    "description": "1 virtual machine:<br>  IBM DB2<br>    db2 instance 1, 1 database<br>"},
+{
+    "title": "Usage and special notes",
+    "description": "1. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>2. Detailed system requirements for DB2 10.5 - https://www.ibm.com/software/reports/compatibility/clarity/index.html<br>3. IBM Knowledge Center for DB2 10.5 - https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0<br>4. IBM Support Portal - https://www.ibm.com/support/home/<br>"}
+],
+      "featuredImageUrl": "",
+      "imageUrl": "",
+      "mediumImageUrl": "",
+      "smallImageUrl": "",
+      "documentationUrl": "",
+      "termsUrl": "",
+      "media": [
+      ]
+    },
+    "toolchain": {
+      "git": "https://github.com/ibmcam/cam-toolchain"
+    }
+}

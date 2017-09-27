@@ -1,0 +1,63 @@
+{
+    "name": "IBM DB2 ESE 11.1 multiple disks on a single VM - VMware vSphere",
+    "description": "This template deploys IBM DB2 Enterprise Server Edition 11.1 on a Linux virtual machine. IBM DB2 is installed and configured with a single instance and database created. The DB2 instance, database data, logs and archive stored in separate partitions.",
+    "version": "1.0",
+    "imageUrl": "",
+    "image": "",
+    "type": "chefcontent",
+    "status": "active",
+    "manifest": {
+      "template_type": "Terraform",
+      "template_format": "HCL",
+      "template_provider": "VMware vSphere",
+      "template": {
+        "templateData": "",
+        "templateVariables": "",
+        "templateOutput": ""
+      },
+      "template_source": {
+        "githubRepoUrl": "",
+        "githubAccessToken": "",
+        "relativePathToTemplateFolder": "ibm_db2_v11_multidisk_template/vmware/terraform",
+        "templateFileName": "ibm_db2_v11_multidisk.tf"
+      }
+    },
+    "metadata": {
+      "displayName": "IBM DB2 ESE 11.1 multiple disks on a single VM",
+      "providerDisplayName": "VMware vSphere",
+      "longDescription": "This template deploys IBM DB2 Enterprise Server Edition 11.1 on a Linux virtual machine. IBM DB2 is installed and configured with a single instance and database created. The DB2 instance, database data, logs and archive stored in separate partitions.",
+      "bullets": [{
+    "title": "Clouds",
+    "description": " VMware<br>"},
+{
+    "title": "Template Version",
+    "description": "1.0<br>"},
+{
+    "title": "Operating Systems Supported",
+    "description": "Red Hat Enterprise Linux 7<br>Red Hat Enterprise Linux 6<br>Ubuntu 16.04 LTS<br>Ubuntu 14.04 LTS<br>"},
+{
+    "title": "Topology",
+    "description": "1 virtual machine:<br>  IBM DB2 ESE 11.1<br>    db2 instance 1, 1 database<br>"},
+{
+    "title": "Software Deployed",
+    "description": "IBM DB2 Enterprise Server Edition 11.1<br>"},
+{
+    "title": "Default Virtual Machine Settings",
+    "description": " vCPU 2, Memory (GB) 4<br>"},
+{
+    "title": "Usage and Special Notes",
+    "description": "1. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>2. Detailed system requirements for DB2 11.1 - https://www.ibm.com/software/reports/compatibility/clarity/index.html<br>3. IBM Knowledge Center for DB2 11.1 - https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0<br>4. IBM Support Portal - https://www.ibm.com/support/home/<br>"}
+],
+      "featuredImageUrl": "",
+      "imageUrl": "",
+      "mediumImageUrl": "",
+      "smallImageUrl": "",
+      "documentationUrl": "",
+      "termsUrl": "",
+      "media": [
+      ]
+    },
+    "toolchain": {
+      "git": "https://github.com/ibmcam/cam-toolchain"
+    }
+}
